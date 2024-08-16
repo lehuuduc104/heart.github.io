@@ -80,13 +80,38 @@ canvas {
   100% {
     transform: scale(1);
   }
+  
 }
+@keyframes scaleText {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+#center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  color: pink;
+  font-size: 20px; /* Điều chỉnh kích thước chữ */
+  font-weight: bold;
+  text-align: center;
+  z-index: 2; /* Đảm bảo chữ nằm trên canvas */
+  animation: scaleText 1.3s infinite; /* Thêm hiệu ứng phóng to nhỏ */
+}
+
+
   </style>
  </HEAD>
  
  <BODY>
    <div class="box">
       <canvas id="pinkboard"></canvas>
+      <div id="center-text">Mọe Nhà Em Vinh</div>
    </div>
   <script>
   /*
